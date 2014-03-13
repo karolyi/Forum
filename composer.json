@@ -1,0 +1,21 @@
+{
+  "name": "karolyi/forum",
+  "description": "My hondaforum application",
+  "license": "WTFPL",
+  "keywords": [
+    "framework",
+    "zf2"
+  ],
+  "homepage": "http://hondaforum.hu/",
+  "require": {
+    "php": ">=5.3.3",
+    "zendframework/zendframework": "2.*",
+    "doctrine/mongodb-odm": "dev-master",
+    "doctrine/doctrine-mongo-odm-module": "dev-master",
+    "doctrine/data-fixtures": "dev-master"
+  },
+  "require-dev": {
+    "zendframework/zend-developer-tools": "*",
+    "zendframework/zftool": "*@dev"
+  }
+}
