@@ -75,7 +75,7 @@ class User
     private $topicCommentsPerPage = 50;
 
     /** @ODM\Int */
-    private $topicPerGroup = 50;
+    private $topicPerGroup = 10;
 
     /** @ODM\Int */
     private $voteLimit = -5;

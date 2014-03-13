@@ -14,28 +14,28 @@ class Topic
     private $isAdminOnly = false;
 
     /** @ODM\Int */
-    private $commentCount;
+    private $commentCount = null;
 
     /** @ODM\ReferenceOne(targetDocument="Comment", simple=true) */
-    private $currComment;
+    private $currComment = null;
 
     /** @ODM\String */
-    private $descriptionParsed;
+    private $descriptionParsed = null;
 
     /** @ODM\Boolean */
-    private $isDisabled;
+    private $isDisabled = null;
 
     /** @ODM\Int */
-    private $groupId;
+    private $groupId = null;
 
     /** @ODM\String */
-    private $htmlName;
+    private $htmlName = null;
 
     /** @ODM\ReferenceOne(targetDocument="User", simple=true) */
-    private $opener;
+    private $opener = null;
 
     /** @ODM\String */
-    private $pureName;
+    private $pureName = null;
 
     /** @ODM\ReferenceOne(targetDocument="Topic", simple=true, nullable=true) */
     private $replyTo = null;
@@ -44,13 +44,13 @@ class Topic
      * @ODM\String
      * @ODM\Index(unique=true, order="asc")
      */
-    private $slug = 'abc123';
+    private $slug = null;
 
     /** @ODM\Int */
     private $truncateAt = 0;
 
     /** @ODM\Boolean */
-    private $isVotingEnabled;
+    private $isVotingEnabled = true;
 
     public function getAdminOnly()
     {
