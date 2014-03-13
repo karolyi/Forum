@@ -92,10 +92,14 @@ class User
     /** @ODM\String */
     private $usedSkin = 'default';
 
+    /** @ODM\EmbedOne(targetDocument="UserSettings") */
+    private $settings = null;
+
     public function __construct()
     {
         $this->regId = Uuid::uuid4();
         $this->regDate = time();
+        $this->settings = new UserSettings();
     }
 
     public function setName($name)
@@ -107,5 +111,48 @@ class User
     {
         $this->password = $value;
     }
+
+}
+
+/**
+* @ODM\EmbeddedDocument
+*/
+class UserSettings
+{
+    /** @ODM\Boolean */
+    private $showAnswersAtComments = true;
+
+    /** @ODM\Boolean */
+    private $showRelations = true;
+
+    /** @ODM\Boolean */
+    private $showChat = true;
+
+    /** @ODM\Boolean */
+    private $showOutsiders = true;
+
+    /** @ODM\Boolean */
+    private $isActivated = false;
+
+    /** @ODM\Boolean */
+    private $isDisabled = false;
+
+    /** @ODM\Boolean */
+    private $isAdmin = false;
+
+    /** @ODM\Boolean */
+    private $mailsFromMessages = true;
+
+    /** @ODM\Boolean */
+    private $mailsFromModeration = true;
+
+    /** @ODM\Boolean */
+    private $mailsFromReplies = true;
+
+    /** @ODM\Boolean */
+    private $mailsFromOwnTopic = false;
+
+    /** @ODM\Boolean */
+    private $useBackgrounds = true;
 
 }
