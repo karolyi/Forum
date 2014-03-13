@@ -12,7 +12,8 @@
     "zendframework/zendframework": "2.*",
     "doctrine/mongodb-odm": "dev-master",
     "doctrine/doctrine-mongo-odm-module": "dev-master",
-    "doctrine/data-fixtures": "dev-master"
+    "doctrine/data-fixtures": "dev-master",
+    "rhumsaa/uuid": "*"
   },
   "require-dev": {
     "zendframework/zend-developer-tools": "*",
