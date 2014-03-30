@@ -16,4 +16,58 @@ class Edit
     /** @ODM\String */
     private $previousContent;
 
+
+    /**
+     * Get id
+     *
+     * @return id $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set editor
+     *
+     * @param Forum\Model\User $editor
+     * @return self
+     */
+    public function setEditor(\Forum\Model\User $editor)
+    {
+        $this->editor = $editor;
+        return $this;
+    }
+
+    /**
+     * Get editor
+     *
+     * @return Forum\Model\User $editor
+     */
+    public function getEditor()
+    {
+        return $this->editor;
+    }
+
+    /**
+     * Set previousContent
+     *
+     * @param string $previousContent
+     * @return self
+     */
+    public function setPreviousContent($previousContent)
+    {
+        $this->previousContent = $previousContent;
+        return $this;
+    }
+
+    /**
+     * Get previousContent
+     *
+     * @return string $previousContent
+     */
+    public function getPreviousContent()
+    {
+        return $this->previousContent;
+    }
 }
