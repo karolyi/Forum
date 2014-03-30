@@ -14,8 +14,8 @@
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Forum\Controller\Index',
-                        'action'     => 'index',
+                        'controller' => 'Forum\Controller\Api\V1\Index',
+                        // 'action'     => 'index',
                     ),
                 ),
             ),
@@ -23,14 +23,14 @@
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'forum' => array(
+            'forum/api/v1' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/forum',
+                    'route'    => '/forum/api/v1',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Forum\Controller',
+                        '__NAMESPACE__' => 'Forum\Controller\Api\V1',
                         'controller'    => 'Index',
-                        'action'        => 'index',
+                        // 'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
@@ -38,10 +38,10 @@
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/[:controller[/:action]]',
+                            'route'    => '/[:controller[/:id]]',
                             'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]+',
+                                'id'     => '[a-zA-Z][a-zA-Z0-9_-]+',
                             ),
                             'defaults' => array(
                             ),
@@ -49,6 +49,12 @@
                     ),
                 ),
             ),
+        ),
+    ),
+    'controllers' => array(
+        'invokables' => array(
+            // 'Forum\Controller\Index' => 'Forum\Controller\IndexController',
+            'Forum\Controller\Api\V1\Index' => 'Forum\Controller\Api\V1\IndexController',
         ),
     ),
     'doctrine' => array(
@@ -83,11 +89,6 @@
             ),
         ),
     ),
-    'controllers' => array(
-        'invokables' => array(
-            'Forum\Controller\Index' => 'Forum\Controller\IndexController'
-        ),
-    ),
     'view_manager' => array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
@@ -102,6 +103,10 @@
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+        // This way the view manager won't look for .phtml files under ../view
+        'strategies' => array(
+            'ViewJsonStrategy'
         ),
     ),
     // Placeholder for console routes

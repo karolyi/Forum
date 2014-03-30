@@ -13,6 +13,7 @@ class User
 
     /** @ODM\String */
     private $name = null;
+    // public $name = null;
 
     /** @ODM\String */
     private $password = null;
@@ -104,7 +105,13 @@ class User
 
     public function setName($name)
     {
+        var_dump('setting name ' . $name);
         $this->name = $name;
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 
     public function setPassword($value='')
