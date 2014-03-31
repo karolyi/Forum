@@ -6,7 +6,7 @@
  * @license   http://www.wtfpl.net/ WTFPL License
  */
 
-    return array(
+return array(
     'router' => array(
         'routes' => array(
             'home' => array(
@@ -114,6 +114,19 @@
         'router' => array(
             'routes' => array(
             ),
+        ),
+    ),
+    'session' => array(
+        'config' => array(
+            'class' => 'Zend\Session\Config\SessionConfig',
+            'options' => array(
+                'name' => 'forum',
+            ),
+        ),
+        'storage' => 'Zend\Session\Storage\SessionArrayStorage',
+        'validators' => array(
+            'Zend\Session\Validator\RemoteAddr',
+            'Zend\Session\Validator\HttpUserAgent',
         ),
     ),
 );

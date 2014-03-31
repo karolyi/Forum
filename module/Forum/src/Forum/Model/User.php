@@ -98,7 +98,7 @@ class User
 
     public function __construct()
     {
-        $this->regId = Uuid::uuid4();
+        $this->regId = Uuid::uuid4()->toString();
         $this->regDate = time();
         $this->settings = new UserSettings();
     }
