@@ -54,7 +54,7 @@ class Comment
         $this->answersToThis = new \Doctrine\Common\Collections\ArrayCollection();
         $this->edits = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
@@ -68,12 +68,13 @@ class Comment
     /**
      * Set topic
      *
-     * @param Forum\Model\Topic $topic
+     * @param  Forum\Model\Topic $topic
      * @return self
      */
     public function setTopic(\Forum\Model\Topic $topic)
     {
         $this->topic = $topic;
+
         return $this;
     }
 
@@ -92,9 +93,9 @@ class Comment
      *
      * @param Forum\Model\Comment $answersToThi
      */
-    public function addAnswersToThi(\Forum\Model\Comment $answersToThi)
+    public function addAnswersToThis(\Forum\Model\Comment $answersToThis)
     {
-        $this->answersToThis[] = $answersToThi;
+        $this->answersToThis[] = $answersToThis;
     }
 
     /**
@@ -102,9 +103,9 @@ class Comment
      *
      * @param Forum\Model\Comment $answersToThi
      */
-    public function removeAnswersToThi(\Forum\Model\Comment $answersToThi)
+    public function removeAnswersToThis(\Forum\Model\Comment $answersToThis)
     {
-        $this->answersToThis->removeElement($answersToThi);
+        $this->answersToThis->removeElement($answersToThis);
     }
 
     /**
@@ -120,12 +121,13 @@ class Comment
     /**
      * Set unixTime
      *
-     * @param int $unixTime
+     * @param  int  $unixTime
      * @return self
      */
     public function setUnixTime($unixTime)
     {
         $this->unixTime = $unixTime;
+
         return $this;
     }
 
@@ -142,12 +144,13 @@ class Comment
     /**
      * Set ip
      *
-     * @param string $ip
+     * @param  string $ip
      * @return self
      */
     public function setIp($ip)
     {
         $this->ip = $ip;
+
         return $this;
     }
 
@@ -164,12 +167,13 @@ class Comment
     /**
      * Set commentNumber
      *
-     * @param int $commentNumber
+     * @param  int  $commentNumber
      * @return self
      */
     public function setCommentNumber($commentNumber)
     {
         $this->commentNumber = $commentNumber;
+
         return $this;
     }
 
@@ -186,12 +190,13 @@ class Comment
     /**
      * Set votingValue
      *
-     * @param int $votingValue
+     * @param  int  $votingValue
      * @return self
      */
     public function setVotingValue($votingValue)
     {
         $this->votingValue = $votingValue;
+
         return $this;
     }
 
@@ -208,12 +213,13 @@ class Comment
     /**
      * Set prevComment
      *
-     * @param Forum\Model\Comment $prevComment
+     * @param  Forum\Model\Comment $prevComment
      * @return self
      */
     public function setPrevComment(\Forum\Model\Comment $prevComment)
     {
         $this->prevComment = $prevComment;
+
         return $this;
     }
 
@@ -260,12 +266,13 @@ class Comment
     /**
      * Set commentParsed
      *
-     * @param string $commentParsed
+     * @param  string $commentParsed
      * @return self
      */
     public function setCommentParsed($commentParsed)
     {
         $this->commentParsed = $commentParsed;
+
         return $this;
     }
 
@@ -282,12 +289,13 @@ class Comment
     /**
      * Set owner
      *
-     * @param Forum\Model\User $owner
+     * @param  Forum\Model\User $owner
      * @return self
      */
     public function setOwner(\Forum\Model\User $owner)
     {
         $this->owner = $owner;
+
         return $this;
     }
 
@@ -304,12 +312,13 @@ class Comment
     /**
      * Set origTopic
      *
-     * @param Forum\Model\Topic $origTopic
+     * @param  Forum\Model\Topic $origTopic
      * @return self
      */
     public function setOrigTopic(\Forum\Model\Topic $origTopic)
     {
         $this->origTopic = $origTopic;
+
         return $this;
     }
 
